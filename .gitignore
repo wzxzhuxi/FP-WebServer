@@ -1,0 +1,82 @@
+# 白名单机制：默认忽略所有文件，只跟踪明确允许的文件
+# Whitelist mechanism: Ignore everything by default, only track explicitly allowed files
+
+# 1. 忽略所有文件
+*
+
+# 2. 允许目录（需要先允许目录才能允许其中的文件）
+!*/
+
+# 3. 允许源代码文件
+# Parser 组件
+!parser/
+!parser/*.hpp
+
+# Router 组件
+!router/
+!router/*.hpp
+
+# HTTP 组件（虽然目前为空）
+!http/
+!http/*.hpp
+!http/*.cpp
+
+# 测试文件
+!test/
+!test/*.cpp
+
+# 示例文件
+!example/
+!example/*.cpp
+
+# 主程序
+!main.cpp
+
+# 4. 允许构建配置文件
+!CMakeLists.txt
+
+# 5. 允许文档文件
+!README.md
+!parser/README.md
+!router/README.md
+!CLAUDE.md
+
+# 6. 允许 Git 配置
+!.gitignore
+!.gitattributes
+
+# 7. 允许许可证文件
+!LICENSE
+!LICENSE.txt
+
+# 8. 明确排除构建产物（即使匹配了上面的模式也要忽略）
+build/
+cmake-build-*/
+.cache/
+
+# 9. 明确排除编译产物
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# 10. 明确排除 IDE 和编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 11. 明确排除 CMake 生成文件
+compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# 12. 明确排除可执行文件
+server
+server_test
+router_example
