@@ -21,13 +21,21 @@
 !http/*.hpp
 !http/*.cpp
 
+# ThreadPool 组件
+!threadpool/
+!threadpool/*.hpp
+
 # 测试文件
 !test/
 !test/*.cpp
+!tests/
+!tests/*.cpp
 
 # 示例文件
 !example/
 !example/*.cpp
+!examples/
+!examples/*.cpp
 
 # 主程序
 !main.cpp
