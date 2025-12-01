@@ -25,6 +25,9 @@
 !threadpool/
 !threadpool/*.hpp
 
+!logger/
+!logger/*.hpp
+
 # 测试文件
 !test/
 !test/*.cpp

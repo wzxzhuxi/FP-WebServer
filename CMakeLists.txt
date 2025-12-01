@@ -31,6 +31,12 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/example/router_usage.cpp)
     target_link_libraries(router_example PRIVATE http_parser)
 endif()
 
+# Logger example
+if(EXISTS ${CMAKE_SOURCE_DIR}/example/logger_usage.cpp)
+    add_executable(logger_example example/logger_usage.cpp)
+    target_include_directories(logger_example PRIVATE ${CMAKE_SOURCE_DIR})
+endif()
+
 # Tests
 enable_testing()
 add_subdirectory(tests)
